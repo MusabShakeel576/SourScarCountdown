@@ -1,6 +1,6 @@
 $( document ).ready(() => {
     // API requests
-    fetch('https://sourscarcountdown.herokuapp.com/admin.html', {
+    fetch('https://sourscarcountdown.herokuapp.com/founder', {
       method: 'GET',
       mode: 'cors',
       headers: {
