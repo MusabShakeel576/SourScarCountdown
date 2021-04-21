@@ -9,9 +9,10 @@ $( document ).ready(() => {
     })
     .then(response => response.text())
     .then(function(data){
-      if(data != 'Login'){
-        window.location.href = 'index.html';
-      }
+      // if(data != 'Login'){
+      //   window.location.href = 'index.html';
+      // }
+      console.log(data);
     });
     // Socket io
     const socket = io();
