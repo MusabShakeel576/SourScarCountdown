@@ -28,12 +28,6 @@ const io = socketio(server);
 app.use(express.static(path.join(__dirname, 'front')));
 
 io.on('connection', socket => {
-    console.log('WS Connection...');
-    socket.emit('message', 'Welcome to Socket')
-    socket.broadcast.emit('message', 'A user has joined the chat')
-    socket.on('disconnect', () => {
-        io.emit('message', 'A user has left the chat');
-    });
     socket.on('clicked', () => {
         io.emit('buttonUpdate', 'clickCount');
     });
@@ -54,10 +48,9 @@ app.post('/', function (req, res) {
     }
 })
 
-app.get('/founder', function (req, res) {
+app.get('/admin', function (req, res) {
     if(!req.session.login){
-        // return res.status(401).send();
-        res.send('Not login')
+        return res.status(401).send();
     }
     res.send('Login');
 })

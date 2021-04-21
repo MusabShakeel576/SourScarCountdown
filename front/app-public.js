@@ -29,9 +29,6 @@ $( document ).ready(() => {
 
     // Socket io
     const socket = io();
-    socket.on('message', message => {
-      console.log(message);
-    })
 
     const timeLabel = $("#timer-label");
     const timeLeft = $("#time-left");
@@ -129,7 +126,6 @@ $( document ).ready(() => {
   
     // Button Start/Pause
     socket.on('buttonUpdate', message => {
-        console.log(message);
             if (isClockRunning()) {
                 clearInterval(countDownInterval);
                 btnStartPause.removeClass("active");

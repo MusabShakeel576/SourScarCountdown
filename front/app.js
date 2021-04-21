@@ -1,6 +1,6 @@
 $( document ).ready(() => {
     // API requests
-    fetch('https://sourscarcountdown.herokuapp.com/founder', {
+    fetch('https://sourscarcountdown.herokuapp.com/admin', {
       method: 'GET',
       mode: 'cors',
       headers: {
@@ -9,16 +9,12 @@ $( document ).ready(() => {
     })
     .then(response => response.text())
     .then(function(data){
-      // if(data != 'Login'){
-      //   window.location.href = 'index.html';
-      // }
-      console.log(data);
+      if(data != 'Login'){
+        window.location.href = 'index.html';
+      }
     });
     // Socket io
     const socket = io();
-    socket.on('message', message => {
-      console.log(message);
-    })
     const timeLabel = $("#timer-label");
     const timeLeft = $("#time-left");
     const breakLength = $("#break-length");
