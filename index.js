@@ -54,7 +54,7 @@ app.post('/', function (req, res) {
     }
 })
 
-app.get('/admin.html', function (req, res) {
+app.get('/founder', function (req, res) {
     if(!req.session.login){
         // return res.status(401).send();
         res.send('Not login')
