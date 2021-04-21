@@ -54,7 +54,7 @@ app.post('/', function (req, res) {
     }
 })
 
-app.get('/admin.html', function (req, res) {
+app.get('https://sourscarcountdown.herokuapp.com/admin.html', function (req, res) {
     if(!req.session.login){
         return res.status(401).send();
     }
