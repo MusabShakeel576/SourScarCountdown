@@ -45,7 +45,7 @@ io.on('connection', socket => {
     });
 });
 // API request
-app.post('/SourScarCountdown/front', function (req, res) {
+app.post('/', function (req, res) {
     if(req.body.password === 'sourscarxmusab'){
         req.session.login = 'success'
         res.send('Correct Password')
@@ -55,7 +55,7 @@ app.post('/SourScarCountdown/front', function (req, res) {
     
 })
 
-app.get('/SourScarCountdown/front/admin.html', function (req, res) {
+app.get('admin.html', function (req, res) {
     if(!req.session.login){
         return res.status(401).send();
     }

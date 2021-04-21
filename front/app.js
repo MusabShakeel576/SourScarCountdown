@@ -1,6 +1,6 @@
 $( document ).ready(() => {
     // API requests
-    fetch('http://localhost:3000/SourScarCountdown/front/admin.html', {
+    fetch('admin.html', {
       method: 'GET',
       mode: 'cors',
       headers: {

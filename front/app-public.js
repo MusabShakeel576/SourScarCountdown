@@ -8,7 +8,7 @@ $( document ).ready(() => {
             const password = $("#password:text").val();
             if(password != ""){
                 const data = { password: password };
-                fetch('http://localhost:3000/SourScarCountdown/front', {
+                fetch('/', {
                   method: 'POST',
                   mode: 'cors',
                   headers: {
