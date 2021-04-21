@@ -1,6 +1,6 @@
 $( document ).ready(() => {
     // API requests
-    fetch('admin.html', {
+    fetch('/admin.html', {
       method: 'GET',
       mode: 'cors',
       headers: {
