@@ -157,7 +157,7 @@ $( document ).ready(() => {
     socket.on('timerTime', message => {
       if(message != "" || message.length != 0 || message != null){
         const time = message.split("-")
-        if(time[0 >= 60]){
+        if(time[0] >= 60){
           $("#time-left").css("color", "lightgreen");
         }else{
           $("#time-left").css("color", "red");
