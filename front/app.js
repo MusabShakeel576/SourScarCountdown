@@ -151,6 +151,11 @@ $( document ).ready(() => {
         }
   
         setTimer(min, sec);
+        if(min >= 60){
+          $("#time-left").css("color", "lightgreen");
+        }else{
+          $("#time-left").css("color", "red");
+        }
         localStorage.setItem("timer", min+'-'+sec)
         socket.emit('timer', min+'-'+sec);
       }, 1000);
@@ -187,8 +192,14 @@ $( document ).ready(() => {
     // Initialize Value
     if(localStorage.length != 0){
       const time = localStorage.getItem("timer").split("-")
+      if(time[0] >= 60){
+        $("#time-left").css("color", "lightgreen");
+      }else{
+        $("#time-left").css("color", "red");
+      }
       setTimer(time[0], time[1]);
     }else{
+      $("#time-left").css("color", "lightgreen");
       setTimer(62, 0);
     }
     breakLength.text('5');
