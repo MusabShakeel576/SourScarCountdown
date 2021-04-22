@@ -1,6 +1,6 @@
 $( document ).ready(() => {
     // API requests
-    fetch('https://sourscarcountdown.herokuapp.com/admin', {
+    fetch('http://localhost:3000/admin', {
       method: 'GET',
       mode: 'cors',
       headers: {
@@ -106,7 +106,7 @@ $( document ).ready(() => {
         setTimer(sessionLength.text(), 0);
       }
     });
-  
+
     // Button Start/Pause
     btnStartPause.click(() => {
       if (isClockRunning()) {
@@ -151,9 +151,10 @@ $( document ).ready(() => {
         }
   
         setTimer(min, sec);
+        localStorage.setItem("timer", min+'-'+sec)
+        socket.emit('timer', min+'-'+sec);
       }, 1000);
     });
-  
     const setTimeLength = (element, mode) => {
       const currentValue = parseInt(element.text());
   
@@ -183,8 +184,13 @@ $( document ).ready(() => {
       timeLeft.text(`${newMin}:${newSec}`);
     }
   
-    // Initialize Value 
-    setTimer(62, 0);
+    // Initialize Value
+    if(localStorage.length != 0){
+      const time = localStorage.getItem("timer").split("-")
+      setTimer(time[0], time[1]);
+    }else{
+      setTimer(62, 0);
+    }
     breakLength.text('5');
     sessionLength.text('62');
 });  

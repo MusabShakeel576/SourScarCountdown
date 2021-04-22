@@ -37,6 +37,9 @@ io.on('connection', socket => {
     socket.on('stop', () => {
         io.emit('buttonStop', 'stopCount');
     });
+    socket.on('timer', message => {
+        io.emit('timerTime', message);
+    });
 });
 // API request
 app.post('/', function (req, res) {

@@ -8,7 +8,7 @@ $( document ).ready(() => {
             const password = $("#password:text").val();
             if(password != ""){
                 const data = { password: password };
-                fetch('https://sourscarcountdown.herokuapp.com/', {
+                fetch('http://localhost:3000/', {
                   method: 'POST',
                   mode: 'cors',
                   headers: {
@@ -124,50 +124,6 @@ $( document ).ready(() => {
         }
     });
   
-    // Button Start/Pause
-    socket.on('buttonUpdate', message => {
-            if (isClockRunning()) {
-                clearInterval(countDownInterval);
-                btnStartPause.removeClass("active");
-                return;
-            } else {
-                btnStartPause.addClass("active");
-            }
-                countDownInterval = setInterval(() => {
-                    const time = timeLeft.text().split(":")
-                    let min = parseInt(time[0]);
-                    let sec = parseInt(time[1]);
-                    
-                    // Counter Start Beep
-                    if(sec === 4 && min === 60){
-                        counterStartBeep.trigger("play");
-                    }
-
-                    if (sec === 0) {
-                    if (min === 0 && currentMode === MODE.BREAK) {
-                        beep.trigger("play");
-                        currentMode = MODE.SESSION;
-                        timeLabel.text(MODE.SESSION);
-                        setTimer(sessionLength.text(), 0);
-                        return
-                    } else if (min === 0 && currentMode === MODE.SESSION) {
-                        beep.trigger("play");
-                        currentMode = MODE.BREAK;
-                        timeLabel.text(MODE.BREAK);
-                        setTimer(breakLength.text(), 0);
-                        return
-                    } else {
-                        sec = 59;
-                        min--
-                    }
-                    } else {
-                    sec--;
-                    }
-            
-                    setTimer(min, sec);
-                }, 1000);
-    });
-  
     const setTimeLength = (element, mode) => {
       const currentValue = parseInt(element.text());
   
@@ -198,7 +154,14 @@ $( document ).ready(() => {
     }
   
     // Initialize Value 
-    setTimer(62, 0);
+    socket.on('timerTime', message => {
+      if(message != "" || message.length != 0 || message != null){
+        const time = message.split("-")
+        setTimer(time[0], time[1]);
+      }else{
+        setTimer(62, 0);
+      }
+    })
     breakLength.text('5');
     sessionLength.text('62');
 });  
