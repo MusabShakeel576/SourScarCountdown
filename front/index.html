@@ -11,25 +11,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <video autoplay muted loop id="background-video">
-        <source src="background_video.mp4" type="video/mp4">
-    </video>
-    <button id="login-button">
-        Login
-    </button>
-    <form action="" id="login-form">
-        <input type="text" id="password" name="password" placeholder="Password">
-        <input type="submit" value="Submit">
-    </form>
-    <header>
-        <h1>
-          Countdown
-        </h1>
-    </header>
-
     <main class="pomodoro-timer">
     <section class="timer">
-        <div id="timer-label">Session Time</div>
+        <div id="timer-label">
+            <button id="login-button">
+                Login
+            </button>
+            <form action="" id="login-form">
+                <input type="text" id="password" name="password" placeholder="Password">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
         <div id="time-left">
         62:00
         </div>

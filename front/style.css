@@ -19,12 +19,17 @@
 body {
 	min-width: 100vw;
 	min-height: 100vh;
-	color: white;
+	background-image: url(tlwcount.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: brown;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	align-items: flex-end;
+	justify-content: right;
 	flex-direction: column;
-	font-family: "Booter", sans-serif;
+	font-family: 'Montserrat';
 }
 button {
 	outline: none;
@@ -44,10 +49,7 @@ header {
 .pomodoro-timer {
 	width: 500px;
 	min-width: 300px;
-	background-color: #1a1f38;
-	border: 5px solid #000;
-	border-radius: 10px;
-	padding: 1rem;
+	padding: 0rem;
 }
 .pomodoro-timer .timer #timer-label {
 	color: #f79415;
