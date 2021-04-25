@@ -51,6 +51,12 @@ button:hover {
 header {
 	margin-bottom: 1.5rem;
 }
+.pomodoro-timer-admin{
+	width: 500px;
+	min-width: 300px;
+	padding: 0rem;
+	background-color: black;
+}
 .pomodoro-timer {
 	width: 500px;
 	min-width: 300px;
