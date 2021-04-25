@@ -36,13 +36,6 @@ body {
     left: 0;
     top: 0;
 }
-#admin-background{
-	background-color: black;
-    z-index: 1;
-}
-#admin-counter{
-    z-index: 2;
-}
 button {
 	outline: none;
 	background: none;
