@@ -125,22 +125,22 @@ $( document ).ready(() => {
         let sec = parseInt(time[1]);
         
         // Counter Start Beep
-        if (time[1] === 4 && time[0] === 60) {
+        if (sec === 4 && min === 60) {
             counter60Beep.trigger("play");
         }
-        if (time[1] === 59 && time[0] === 61) {
+        if (sec === 59 && min === 61) {
             counterStartBeep.trigger("play");
         }
-        if (time[1] === 2 && time[0] === 30) {
+        if (sec === 2 && min === 30) {
             counter30Beep.trigger("play");
         }
-        if (time[1] === 3 && time[0] === 15) {
+        if (sec === 3 && min === 15) {
             counter15Beep.trigger("play");
         }
-        if (time[1] === 6 && time[0] === 5) {
+        if (sec === 6 && min === 5) {
             counter5Beep.trigger("play");
         }
-        if (time[1] === 5 && time[0] === 0) {
+        if (sec === 5 && min === 0) {
             beep.trigger("play");
         }
 
