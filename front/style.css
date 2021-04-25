@@ -130,11 +130,23 @@ header {
 	font-size: 1.8rem;
 }
 
+#admin-body{
+	min-width: 1200px;
+    min-height: 1200px;
+    position: relative;
+    font-family: 'Montserrat';
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+}
 .pomodoro-timer-admin{
 	width: 500px;
 	min-width: 300px;
-	padding: 0rem;
-	background-color: black;
+	padding: 2rem;
+    background-color: black;
+    border: 2px solid white;
 }
 .pomodoro-timer-admin .timer #timer-label {
 	color: #f79415;
