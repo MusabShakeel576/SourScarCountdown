@@ -11,50 +11,55 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <video autoplay muted loop id="background-video">
-        <source src="background_video.mp4" type="video/mp4">
-    </video>
-    <header>
-        <h1>
-          Countdown
-        </h1>
-    </header>
+    <div id="admin-background">
+    </div>
+    <div id="admin-counter">
+        <header>
+            <h1>
+                Countdown
+            </h1>
+        </header>
 
-    <main class="pomodoro-timer">
-    <section class="timer">
-        <div id="timer-label">Session Time</div>
-        <div id="time-left">
-        62:00
-        </div>
-        <audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
-        <audio id="counter-start-beep" src="counter-start.ogg"></audio>
-    </section>
-
-    <section class="controls">
-        <button id="stop"><i class="fas fa-redo"></i></button>
-        <button id="start_stop" class="">
-        <i class="fas fa-play"></i>
-        <i class="fas fa-pause"></i>
-        </button>
-        <button id="reset" style="display:none"><i class="fas fa-trash"></i></button>
-    </section>
-
-    <section class="duration-setting" style="display:none">
-        <section class="setting">
-        <div id="break-label" class="label">Break Length</div>
-        <button id="break-decrement"><i class="fas fa-chevron-left"></i></button>
-        <div id="break-length">5</div>
-        <button id="break-increment"><i class="fas fa-chevron-right"></i></button>
+        <main class="pomodoro-timer">
+        <section class="timer">
+            <div id="timer-label">Session Time</div>
+            <div id="time-left">
+            62:00
+            </div>
+            <audio id="beep" src="audio/cutlass_crusades_cease_fire.mp3"></audio>
+            <audio id="counter-start-beep" src="audio/cutlass_crusades_start.mp3"></audio>
+            <audio id="counter-60-beep" src="audio/cutlass_crusades_60_min.mp3"></audio>
+            <audio id="counter-30-beep" src="audio/cutlass_crusades_30_min.mp3"></audio>
+            <audio id="counter-15-beep" src="audio/cutlass_crusades_15_min.mp3"></audio>
+            <audio id="counter-5-beep" src="audio/cutlass_crusades_5_min.mp3"></audio>
         </section>
 
-        <section class="setting">
-        <div id="session-label" class="label">Session Length</div>
-        <button id="session-decrement"><i class="fas fa-chevron-left"></i></button>
-        <div id="session-length">25</div>
-        <button id="session-increment"><i class="fas fa-chevron-right"></i></button>
+        <section class="controls">
+            <button id="stop"><i class="fas fa-redo"></i></button>
+            <button id="start_stop" class="">
+            <i class="fas fa-play"></i>
+            <i class="fas fa-pause"></i>
+            </button>
+            <button id="reset" style="display:none"><i class="fas fa-trash"></i></button>
         </section>
-    </section>
-    </main>
+
+        <section class="duration-setting" style="display:none">
+            <section class="setting">
+            <div id="break-label" class="label">Break Length</div>
+            <button id="break-decrement"><i class="fas fa-chevron-left"></i></button>
+            <div id="break-length">5</div>
+            <button id="break-increment"><i class="fas fa-chevron-right"></i></button>
+            </section>
+
+            <section class="setting">
+            <div id="session-label" class="label">Session Length</div>
+            <button id="session-decrement"><i class="fas fa-chevron-left"></i></button>
+            <div id="session-length">25</div>
+            <button id="session-increment"><i class="fas fa-chevron-right"></i></button>
+            </section>
+        </section>
+        </main>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>

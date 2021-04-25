@@ -36,6 +36,19 @@ body {
     left: 0;
     top: 0;
 }
+#admin-background{
+	background-color: #b1aeae;
+	background-size: cover;
+	width: 1920px;
+	height: 1080px;
+	position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+}
+#admin-counter{
+    z-index: 2;
+}
 button {
 	outline: none;
 	background: none;

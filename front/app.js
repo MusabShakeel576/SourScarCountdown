@@ -125,19 +125,32 @@ $( document ).ready(() => {
         let sec = parseInt(time[1]);
         
         // Counter Start Beep
-        if(sec === 4 && min === 60){
+        if (time[1] === 4 && time[0] === 60) {
+            counter60Beep.trigger("play");
+        }
+        if (time[1] === 0 && time[0] === 62) {
             counterStartBeep.trigger("play");
+        }
+        if (time[1] === 2 && time[0] === 30) {
+            counter30Beep.trigger("play");
+        }
+        if (time[1] === 3 && time[0] === 15) {
+            counter15Beep.trigger("play");
+        }
+        if (time[1] === 6 && time[0] === 5) {
+            counter5Beep.trigger("play");
+        }
+        if (time[1] === 5 && time[0] === 0) {
+            beep.trigger("play");
         }
 
         if (sec === 0) {
           if (min === 0 && currentMode === MODE.BREAK) {
-            beep.trigger("play");
             currentMode = MODE.SESSION;
             timeLabel.text(MODE.SESSION);
             setTimer(sessionLength.text(), 0);
             return
           } else if (min === 0 && currentMode === MODE.SESSION) {
-            beep.trigger("play");
             currentMode = MODE.BREAK;
             timeLabel.text(MODE.BREAK);
             setTimer(breakLength.text(), 0);
