@@ -204,4 +204,4 @@ $( document ).ready(() => {
     }
     breakLength.text('5');
     sessionLength.text('62');
-});  
+});

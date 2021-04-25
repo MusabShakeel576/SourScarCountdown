@@ -17,19 +17,24 @@
 	z-index: -1;
 }
 body {
-	min-width: 100vw;
-	min-height: 100vh;
+	min-width: 1200px;
+	min-height: 1200px;
+	position: relative;
+	font-family: 'Montserrat';
+	overflow: hidden;
+}
+#background{
 	background-image: url(tlwcount.png);
-	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	background-color: #b1aeae;
 	background-size: cover;
-	background-color: brown;
-	display: flex;
-	align-items: flex-end;
-	justify-content: right;
-	flex-direction: column;
-	font-family: 'Montserrat';
+	width: 1920px;
+	height: 1080px;
+	position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
 }
 button {
 	outline: none;
@@ -50,6 +55,10 @@ header {
 	width: 500px;
 	min-width: 300px;
 	padding: 0rem;
+	position: absolute;
+    z-index: 2;
+    right: 120px;
+    top: 0;
 }
 .pomodoro-timer .timer #timer-label {
 	color: #f79415;
