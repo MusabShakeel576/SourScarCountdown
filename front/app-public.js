@@ -163,30 +163,32 @@ $(document).ready(() => {
   socket.on('timerTime', message => {
       if (message != "" || message.length != 0 || message != null) {
           const time = message.split("-")
-          if (time[0] >= 60) {
+          let min = parseInt(time[0]);
+          let sec = parseInt(time[1]);
+          if (min >= 60) {
               $("#time-left").css("color", "lightgreen");
-              if (time[1] === 4 && time[0] === 60) {
+              if (sec === 4 && min === 60) {
                   counter60Beep.trigger("play");
               }
-              if (time[1] === 0 && time[0] === 62) {
+              if (sec === 0 && min === 62) {
                   counterStartBeep.trigger("play");
               }
           } else {
               $("#time-left").css("color", "red");
-              if (time[1] === 2 && time[0] === 30) {
+              if (sec === 2 && min === 30) {
                   counter30Beep.trigger("play");
               }
-              if (time[1] === 3 && time[0] === 15) {
+              if (sec === 3 && min === 15) {
                   counter15Beep.trigger("play");
               }
-              if (time[1] === 6 && time[0] === 5) {
+              if (sec === 6 && min === 5) {
                   counter5Beep.trigger("play");
               }
-              if (time[1] === 6 && time[0] === 0) {
+              if (sec === 6 && min === 0) {
                   beep.trigger("play");
               }
           }
-          setTimer(time[0], time[1]);
+          setTimer(min, sec);
       } else {
           $("#time-left").css("color", "lightgreen");
           setTimer(62, 0);

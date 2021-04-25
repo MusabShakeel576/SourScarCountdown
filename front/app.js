@@ -21,6 +21,10 @@ $( document ).ready(() => {
     const sessionLength = $("#session-length");
     const beep = $("#beep");
     const counterStartBeep = $("#counter-start-beep");
+    const counter60Beep = $("#counter-60-beep");
+    const counter30Beep = $("#counter-30-beep");
+    const counter15Beep = $("#counter-15-beep");
+    const counter5Beep = $("#counter-5-beep");
     
     const btnStop = $("#stop");
     const btnStartPause = $("#start_stop");
