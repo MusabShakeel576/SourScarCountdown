@@ -170,7 +170,7 @@ $(document).ready(() => {
               if (sec === 4 && min === 60) {
                   counter60Beep.trigger("play");
               }
-              if (sec === 0 && min === 62) {
+              if (sec === 59 && min === 61) {
                   counterStartBeep.trigger("play");
               }
           } else {
