@@ -128,7 +128,7 @@ $( document ).ready(() => {
         if (time[1] === 4 && time[0] === 60) {
             counter60Beep.trigger("play");
         }
-        if (time[1] === 0 && time[0] === 62) {
+        if (time[1] === 59 && time[0] === 61) {
             counterStartBeep.trigger("play");
         }
         if (time[1] === 2 && time[0] === 30) {
